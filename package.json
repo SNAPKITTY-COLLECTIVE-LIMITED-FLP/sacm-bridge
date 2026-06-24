@@ -1,0 +1,25 @@
+{
+  "name": "@snapkitty/sacm-bridge",
+  "version": "0.1.0",
+  "description": "SACM Bridge — compatibility intake layer with Axiom filtering, signed receipts, and WORM audit chain.",
+  "type": "module",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test dist/tests/*.test.js"
+  },
+  "keywords": [
+    "sacm",
+    "bridge",
+    "sovereign",
+    "worm",
+    "snapkitty"
+  ],
+  "author": "SnapKitty Collective",
+  "license": "BSD-2-Clause",
+  "devDependencies": {
+    "@types/node": "^20.19.41",
+    "typescript": "^5.7.2"
+  }
+}

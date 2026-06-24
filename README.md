@@ -52,6 +52,10 @@ POST /api/gateway/sovereign   → SEIT Charter + Immutable Ledger
 ## Quick Start
 
 ```bash
+# Run locally
+npm install
+npm test
+
 # Import any legacy project
 curl -X POST https://collectivekitty.com/api/gateway/bridge \
   -H "Content-Type: application/json" \
@@ -90,6 +94,16 @@ All audit and retrieval endpoints require authentication.
 Full implementation: [SNAPKITTYWEST/DEVFLOW-FINANCE](https://github.com/SNAPKITTYWEST/DEVFLOW-FINANCE)
 Core library: `collectivekitty/lib/magma/bridge.ts`
 API endpoint: `collectivekitty/pages/api/gateway/bridge.ts`
+
+This standalone repo now also ships a runnable TypeScript reference engine:
+
+```text
+src/index.ts          Axiom filter, signed bridge receipts, WORM chain
+tests/bridge.test.ts  Import, rejection, and chain verification tests
+```
+
+The engine is intentionally dependency-light and in-memory. Production persistence
+belongs in `DEVFLOW-FINANCE` via Redis/NATS/WORM storage.
 
 ---
 
